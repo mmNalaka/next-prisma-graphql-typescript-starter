@@ -1,0 +1,29 @@
+{
+  "name": "next-prisma-graphql-typescript-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mmNalaka/next-prisma-graphql-typescript-starter.git",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@nexus/schema": "^0.19.2",
+    "@prisma/client": "^2.12.1",
+    "next": "^10.0.3",
+    "nexus-plugin-prisma": "^0.25.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.12.1",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.2"
+  },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  }
+}
