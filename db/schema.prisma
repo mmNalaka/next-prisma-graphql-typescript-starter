@@ -51,14 +51,6 @@ model User {
   @@map(name: "users")
 }
 
-model Permission {
-  id    Int    @id @default(autoincrement())
-  code  String @unique
-  label String
-
-  @@map(name: "permissions")
-}
-
 model VerificationRequest {
   id         Int      @id @default(autoincrement())
   identifier String

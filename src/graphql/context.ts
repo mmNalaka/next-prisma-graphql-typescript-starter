@@ -1,14 +1,18 @@
 import { PrismaClient } from '@prisma/client'
+import { NextApiResponse } from 'next'
+import { NextApiRequest } from 'next-auth/_utils'
 
-const db = new PrismaClient()
+import { dbClient } from '../../db/client'
 
 export interface Context {
-  db: PrismaClient
+  prisma: PrismaClient
+  req: NextApiRequest
+  res: NextApiResponse
 }
 
-export function createContext(props): Context {
+export const createContext = (props) => {
   return {
     ...props,
-    db,
+    prisma: dbClient,
   }
 }

@@ -8,13 +8,17 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "types"],
-    "plugins": [{ "name": "nexus/typescript-language-service" }]
+    "plugins": [
+      {
+        "name": "nexus/typescript-language-service"
+      }
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
   "exclude": ["node_modules"]

@@ -6,8 +6,8 @@ import { createContext } from '../../graphql/context'
 const IS_DEV = process.env.NODE_ENV === 'development'
 
 const apolloServer = new ApolloServer({
-  context: createContext,
   schema,
+  context: createContext,
   tracing: IS_DEV,
 })
 

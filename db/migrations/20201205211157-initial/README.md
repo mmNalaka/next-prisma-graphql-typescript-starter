@@ -1,6 +1,6 @@
-# Migration `20201205101616-initial`
+# Migration `20201205211157-initial`
 
-This migration has been generated at 12/5/2020, 11:16:16 AM.
+This migration has been generated at 12/5/2020, 10:11:57 PM.
 You can check out the [state of the schema](./schema.prisma) after the migration.
 
 ## Database Steps
@@ -78,7 +78,7 @@ CREATE UNIQUE INDEX "verification_requests.token_unique" ON "verification_reques
 
 ```diff
 diff --git schema.prisma schema.prisma
-migration ..20201205101616-initial
+migration ..20201205211157-initial
 --- datamodel.dml
 +++ datamodel.dml
 @@ -1,0 +1,63 @@

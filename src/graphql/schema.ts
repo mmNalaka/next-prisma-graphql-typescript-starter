@@ -1,19 +1,19 @@
-import { makeSchema, queryType } from '@nexus/schema'
+import { makeSchema } from '@nexus/schema'
 import { nexusPrisma } from 'nexus-plugin-prisma'
 import path from 'path'
 
-const Query = queryType({
-  definition(t) {
-    t.string('hello', { resolve: () => 'hello world' })
-  },
-})
+import * as types from './types'
+import * as resolvers from './resolvers'
 
 export const schema = makeSchema({
-  types: [Query],
+  types: {
+    types,
+    resolvers,
+  },
   plugins: [nexusPrisma({ experimentalCRUD: true })],
   outputs: {
-    typegen: path.join(process.cwd(), 'generated', 'nexus-typegen.ts'),
-    schema: path.join(process.cwd(), 'generated', 'schema.graphql'),
+    typegen: path.resolve('src/generated/nexus-typegen.ts'),
+    schema: path.resolve('src/generated/schema.graphql'),
   },
   typegenAutoConfig: {
     contextType: 'Context.Context',
@@ -23,7 +23,7 @@ export const schema = makeSchema({
         alias: 'prisma',
       },
       {
-        source: path.join(process.cwd(), 'graphql', 'context.ts'),
+        source: path.resolve('src/graphql/context.ts'),
         alias: 'Context',
       },
     ],
