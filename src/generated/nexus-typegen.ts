@@ -113,6 +113,7 @@ export interface NexusGenInputs {
   PermissionCreateWithoutUserInput: { // input type
     code: string; // String!
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    group: string; // String!
     label: string; // String!
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
   }
@@ -120,6 +121,7 @@ export interface NexusGenInputs {
     AND?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
     code?: NexusGenInputs['StringFilter'] | null; // StringFilter
     createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
+    group?: NexusGenInputs['StringFilter'] | null; // StringFilter
     id?: NexusGenInputs['IntFilter'] | null; // IntFilter
     label?: NexusGenInputs['StringFilter'] | null; // StringFilter
     NOT?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
@@ -130,6 +132,7 @@ export interface NexusGenInputs {
   PermissionUpdateManyMutationInput: { // input type
     code?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    group?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     label?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     updatedAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
   }
@@ -156,6 +159,7 @@ export interface NexusGenInputs {
   PermissionUpdateWithoutUserInput: { // input type
     code?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    group?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     label?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
     updatedAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
   }
@@ -165,6 +169,8 @@ export interface NexusGenInputs {
     where: NexusGenInputs['PermissionWhereUniqueInput']; // PermissionWhereUniqueInput!
   }
   PermissionWhereUniqueInput: { // input type
+    code?: string | null; // String
+    group?: string | null; // String
     id?: number | null; // Int
   }
   StringFieldUpdateOperationsInput: { // input type

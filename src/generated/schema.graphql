@@ -116,6 +116,7 @@ input PermissionCreateOrConnectWithoutuserInput {
 input PermissionCreateWithoutUserInput {
   code: String!
   createdAt: DateTime
+  group: String!
   label: String!
   updatedAt: DateTime
 }
@@ -124,6 +125,7 @@ input PermissionScalarWhereInput {
   AND: [PermissionScalarWhereInput!]
   code: StringFilter
   createdAt: DateTimeFilter
+  group: StringFilter
   id: IntFilter
   label: StringFilter
   NOT: [PermissionScalarWhereInput!]
@@ -135,6 +137,7 @@ input PermissionScalarWhereInput {
 input PermissionUpdateManyMutationInput {
   code: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  group: StringFieldUpdateOperationsInput
   label: StringFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
@@ -160,6 +163,7 @@ input PermissionUpdateManyWithWhereWithoutUserInput {
 input PermissionUpdateWithoutUserInput {
   code: StringFieldUpdateOperationsInput
   createdAt: DateTimeFieldUpdateOperationsInput
+  group: StringFieldUpdateOperationsInput
   label: StringFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
@@ -176,6 +180,8 @@ input PermissionUpsertWithWhereUniqueWithoutUserInput {
 }
 
 input PermissionWhereUniqueInput {
+  code: String
+  group: String
   id: Int
 }
 
