@@ -10,9 +10,9 @@ export default authHandler
 
 const options: InitOptions = {
   providers: [
-    Providers.GitHub({
-      clientId: process.env.GITHUB_AUTH_CLIENT_ID,
-      clientSecret: process.env.GITHUB_AUTH_CLIENT_SECRET,
+    Providers.Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   adapter: Adapters.Prisma.Adapter({
@@ -20,4 +20,18 @@ const options: InitOptions = {
   }),
 
   secret: process.env.SECRET,
+
+  callbacks: {
+    signIn: async (user, account, profile) => {
+      if (account.provider === 'google' && profile.verified_email === true) {
+        console.log({
+          user,
+          profile,
+        })
+        return Promise.resolve(true)
+      } else {
+        return Promise.resolve(false)
+      }
+    },
+  },
 }

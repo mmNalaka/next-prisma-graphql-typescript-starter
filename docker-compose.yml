@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: public_web_admin
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "1111:5432"
+
+volumes:
+  postgres:

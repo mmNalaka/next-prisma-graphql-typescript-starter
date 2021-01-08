@@ -40,15 +40,29 @@ model Session {
 }
 
 model User {
-  id            Int       @id @default(autoincrement())
+  id            Int          @id @default(autoincrement())
   name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map(name: "email_verified")
+  email         String?      @unique
+  emailVerified DateTime?    @map(name: "email_verified")
   image         String?
-  createdAt     DateTime  @default(now()) @map(name: "created_at")
-  updatedAt     DateTime  @default(now()) @map(name: "updated_at")
+  createdAt     DateTime     @default(now()) @map(name: "created_at")
+  updatedAt     DateTime     @default(now()) @map(name: "updated_at")
+  permissions   Permission[]
 
   @@map(name: "users")
+}
+
+model Permission {
+  id        Int      @id @default(autoincrement())
+  code      String
+  label     String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
+
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?  @map(name: "user_id")
+
+  @@map(name: "permissions")
 }
 
 model VerificationRequest {

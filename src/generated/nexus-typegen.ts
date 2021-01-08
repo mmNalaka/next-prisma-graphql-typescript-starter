@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as Context from "./../graphql/context"
+
 
 
 
@@ -22,11 +22,167 @@ export interface NexusGenInputs {
   DateTimeFieldUpdateOperationsInput: { // input type
     set?: NexusGenScalars['DateTime'] | null; // DateTime
   }
+  DateTimeFilter: { // input type
+    equals?: NexusGenScalars['DateTime'] | null; // DateTime
+    gt?: NexusGenScalars['DateTime'] | null; // DateTime
+    gte?: NexusGenScalars['DateTime'] | null; // DateTime
+    in?: NexusGenScalars['DateTime'][] | null; // [DateTime!]
+    lt?: NexusGenScalars['DateTime'] | null; // DateTime
+    lte?: NexusGenScalars['DateTime'] | null; // DateTime
+    not?: NexusGenInputs['NestedDateTimeFilter'] | null; // NestedDateTimeFilter
+    notIn?: NexusGenScalars['DateTime'][] | null; // [DateTime!]
+  }
+  IntFilter: { // input type
+    equals?: number | null; // Int
+    gt?: number | null; // Int
+    gte?: number | null; // Int
+    in?: number[] | null; // [Int!]
+    lt?: number | null; // Int
+    lte?: number | null; // Int
+    not?: NexusGenInputs['NestedIntFilter'] | null; // NestedIntFilter
+    notIn?: number[] | null; // [Int!]
+  }
+  IntNullableFilter: { // input type
+    equals?: number | null; // Int
+    gt?: number | null; // Int
+    gte?: number | null; // Int
+    in?: number[] | null; // [Int!]
+    lt?: number | null; // Int
+    lte?: number | null; // Int
+    not?: NexusGenInputs['NestedIntNullableFilter'] | null; // NestedIntNullableFilter
+    notIn?: number[] | null; // [Int!]
+  }
+  NestedDateTimeFilter: { // input type
+    equals?: NexusGenScalars['DateTime'] | null; // DateTime
+    gt?: NexusGenScalars['DateTime'] | null; // DateTime
+    gte?: NexusGenScalars['DateTime'] | null; // DateTime
+    in?: NexusGenScalars['DateTime'][] | null; // [DateTime!]
+    lt?: NexusGenScalars['DateTime'] | null; // DateTime
+    lte?: NexusGenScalars['DateTime'] | null; // DateTime
+    not?: NexusGenInputs['NestedDateTimeFilter'] | null; // NestedDateTimeFilter
+    notIn?: NexusGenScalars['DateTime'][] | null; // [DateTime!]
+  }
+  NestedIntFilter: { // input type
+    equals?: number | null; // Int
+    gt?: number | null; // Int
+    gte?: number | null; // Int
+    in?: number[] | null; // [Int!]
+    lt?: number | null; // Int
+    lte?: number | null; // Int
+    not?: NexusGenInputs['NestedIntFilter'] | null; // NestedIntFilter
+    notIn?: number[] | null; // [Int!]
+  }
+  NestedIntNullableFilter: { // input type
+    equals?: number | null; // Int
+    gt?: number | null; // Int
+    gte?: number | null; // Int
+    in?: number[] | null; // [Int!]
+    lt?: number | null; // Int
+    lte?: number | null; // Int
+    not?: NexusGenInputs['NestedIntNullableFilter'] | null; // NestedIntNullableFilter
+    notIn?: number[] | null; // [Int!]
+  }
+  NestedStringFilter: { // input type
+    contains?: string | null; // String
+    endsWith?: string | null; // String
+    equals?: string | null; // String
+    gt?: string | null; // String
+    gte?: string | null; // String
+    in?: string[] | null; // [String!]
+    lt?: string | null; // String
+    lte?: string | null; // String
+    not?: NexusGenInputs['NestedStringFilter'] | null; // NestedStringFilter
+    notIn?: string[] | null; // [String!]
+    startsWith?: string | null; // String
+  }
   NullableDateTimeFieldUpdateOperationsInput: { // input type
     set?: NexusGenScalars['DateTime'] | null; // DateTime
   }
   NullableStringFieldUpdateOperationsInput: { // input type
     set?: string | null; // String
+  }
+  PermissionCreateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['PermissionWhereUniqueInput'][] | null; // [PermissionWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['PermissionCreateOrConnectWithoutuserInput'][] | null; // [PermissionCreateOrConnectWithoutuserInput!]
+    create?: NexusGenInputs['PermissionCreateWithoutUserInput'][] | null; // [PermissionCreateWithoutUserInput!]
+  }
+  PermissionCreateOrConnectWithoutuserInput: { // input type
+    create: NexusGenInputs['PermissionCreateWithoutUserInput']; // PermissionCreateWithoutUserInput!
+    where: NexusGenInputs['PermissionWhereUniqueInput']; // PermissionWhereUniqueInput!
+  }
+  PermissionCreateWithoutUserInput: { // input type
+    code: string; // String!
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    label: string; // String!
+    updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  PermissionScalarWhereInput: { // input type
+    AND?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
+    code?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    createdAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
+    id?: NexusGenInputs['IntFilter'] | null; // IntFilter
+    label?: NexusGenInputs['StringFilter'] | null; // StringFilter
+    NOT?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
+    OR?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
+    updatedAt?: NexusGenInputs['DateTimeFilter'] | null; // DateTimeFilter
+    userId?: NexusGenInputs['IntNullableFilter'] | null; // IntNullableFilter
+  }
+  PermissionUpdateManyMutationInput: { // input type
+    code?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    label?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    updatedAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+  }
+  PermissionUpdateManyWithWhereWithoutUserInput: { // input type
+    data: NexusGenInputs['PermissionUpdateManyMutationInput']; // PermissionUpdateManyMutationInput!
+    where: NexusGenInputs['PermissionScalarWhereInput']; // PermissionScalarWhereInput!
+  }
+  PermissionUpdateManyWithoutUserInput: { // input type
+    connect?: NexusGenInputs['PermissionWhereUniqueInput'][] | null; // [PermissionWhereUniqueInput!]
+    connectOrCreate?: NexusGenInputs['PermissionCreateOrConnectWithoutuserInput'][] | null; // [PermissionCreateOrConnectWithoutuserInput!]
+    create?: NexusGenInputs['PermissionCreateWithoutUserInput'][] | null; // [PermissionCreateWithoutUserInput!]
+    delete?: NexusGenInputs['PermissionWhereUniqueInput'][] | null; // [PermissionWhereUniqueInput!]
+    deleteMany?: NexusGenInputs['PermissionScalarWhereInput'][] | null; // [PermissionScalarWhereInput!]
+    disconnect?: NexusGenInputs['PermissionWhereUniqueInput'][] | null; // [PermissionWhereUniqueInput!]
+    set?: NexusGenInputs['PermissionWhereUniqueInput'][] | null; // [PermissionWhereUniqueInput!]
+    update?: NexusGenInputs['PermissionUpdateWithWhereUniqueWithoutUserInput'][] | null; // [PermissionUpdateWithWhereUniqueWithoutUserInput!]
+    updateMany?: NexusGenInputs['PermissionUpdateManyWithWhereWithoutUserInput'][] | null; // [PermissionUpdateManyWithWhereWithoutUserInput!]
+    upsert?: NexusGenInputs['PermissionUpsertWithWhereUniqueWithoutUserInput'][] | null; // [PermissionUpsertWithWhereUniqueWithoutUserInput!]
+  }
+  PermissionUpdateWithWhereUniqueWithoutUserInput: { // input type
+    data: NexusGenInputs['PermissionUpdateWithoutUserInput']; // PermissionUpdateWithoutUserInput!
+    where: NexusGenInputs['PermissionWhereUniqueInput']; // PermissionWhereUniqueInput!
+  }
+  PermissionUpdateWithoutUserInput: { // input type
+    code?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    createdAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+    label?: NexusGenInputs['StringFieldUpdateOperationsInput'] | null; // StringFieldUpdateOperationsInput
+    updatedAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
+  }
+  PermissionUpsertWithWhereUniqueWithoutUserInput: { // input type
+    create: NexusGenInputs['PermissionCreateWithoutUserInput']; // PermissionCreateWithoutUserInput!
+    update: NexusGenInputs['PermissionUpdateWithoutUserInput']; // PermissionUpdateWithoutUserInput!
+    where: NexusGenInputs['PermissionWhereUniqueInput']; // PermissionWhereUniqueInput!
+  }
+  PermissionWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  StringFieldUpdateOperationsInput: { // input type
+    set?: string | null; // String
+  }
+  StringFilter: { // input type
+    contains?: string | null; // String
+    endsWith?: string | null; // String
+    equals?: string | null; // String
+    gt?: string | null; // String
+    gte?: string | null; // String
+    in?: string[] | null; // [String!]
+    lt?: string | null; // String
+    lte?: string | null; // String
+    mode?: NexusGenEnums['QueryMode'] | null; // QueryMode
+    not?: NexusGenInputs['NestedStringFilter'] | null; // NestedStringFilter
+    notIn?: string[] | null; // [String!]
+    startsWith?: string | null; // String
   }
   UserCreateInput: { // input type
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
@@ -34,6 +190,7 @@ export interface NexusGenInputs {
     emailVerified?: NexusGenScalars['DateTime'] | null; // DateTime
     image?: string | null; // String
     name?: string | null; // String
+    permissions?: NexusGenInputs['PermissionCreateManyWithoutUserInput'] | null; // PermissionCreateManyWithoutUserInput
     updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
   }
   UserUpdateInput: { // input type
@@ -42,6 +199,7 @@ export interface NexusGenInputs {
     emailVerified?: NexusGenInputs['NullableDateTimeFieldUpdateOperationsInput'] | null; // NullableDateTimeFieldUpdateOperationsInput
     image?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
     name?: NexusGenInputs['NullableStringFieldUpdateOperationsInput'] | null; // NullableStringFieldUpdateOperationsInput
+    permissions?: NexusGenInputs['PermissionUpdateManyWithoutUserInput'] | null; // PermissionUpdateManyWithoutUserInput
     updatedAt?: NexusGenInputs['DateTimeFieldUpdateOperationsInput'] | null; // DateTimeFieldUpdateOperationsInput
   }
   UserWhereUniqueInput: { // input type
@@ -51,6 +209,7 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
+  QueryMode: "default" | "insensitive"
 }
 
 export interface NexusGenScalars {
@@ -79,7 +238,7 @@ export interface NexusGenUnions {
 
 export type NexusGenRootTypes = NexusGenObjects
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
@@ -151,7 +310,7 @@ export type NexusGenObjectNames = keyof NexusGenObjects;
 
 export type NexusGenInputNames = keyof NexusGenInputs;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 
@@ -172,9 +331,10 @@ export type NexusGenFeaturesConfig = {
 }
 
 export interface NexusGenTypes {
-  context: Context.Context;
+  context: any;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
+  inputTypeShapes: NexusGenInputs & NexusGenEnums & NexusGenScalars;
   argTypes: NexusGenArgTypes;
   fieldTypes: NexusGenFieldTypes;
   fieldTypeNames: NexusGenFieldTypeNames;
@@ -201,71 +361,11 @@ declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
   }
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
-    /**
-     * Whether the type can be null
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    nullable?: boolean
-    /**
-     * Whether the type is list of values, or just a single value.
-     * If list is true, we assume the type is a list. If list is an array,
-     * we'll assume that it's a list with the depth. The boolean indicates whether
-     * the type is required (non-null), where true = nonNull, false = nullable.
-     * @see declarativeWrappingPlugin
-     */
-    list?: true | boolean[]
-    /**
-     * Whether the type should be non null, `required: true` = `nullable: false`
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    required?: boolean
   }
   interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
-    /**
-     * Whether the type can be null
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    nullable?: boolean
-    /**
-     * Whether the type is list of values, or just a single value.
-     * If list is true, we assume the type is a list. If list is an array,
-     * we'll assume that it's a list with the depth. The boolean indicates whether
-     * the type is required (non-null), where true = nonNull, false = nullable.
-     * @see declarativeWrappingPlugin
-     */
-    list?: true | boolean[]
-    /**
-     * Whether the type should be non null, `required: true` = `nullable: false`
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    required?: boolean
   }
   interface NexusGenPluginSchemaConfig {
   }
   interface NexusGenPluginArgConfig {
-    /**
-     * Whether the type can be null
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    nullable?: boolean
-    /**
-     * Whether the type is list of values, or just a single value.
-     * If list is true, we assume the type is a list. If list is an array,
-     * we'll assume that it's a list with the depth. The boolean indicates whether
-     * the type is required (non-null), where true = nonNull, false = nullable.
-     * @see declarativeWrappingPlugin
-     */
-    list?: true | boolean[]
-    /**
-     * Whether the type should be non null, `required: true` = `nullable: false`
-     * @default (depends on whether nullability is configured in type or schema)
-     * @see declarativeWrappingPlugin
-     */
-    required?: boolean
   }
 }
